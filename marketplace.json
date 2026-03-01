@@ -1,0 +1,8 @@
+{
+  "$schema": "https://registry.dcyfr.ai/schemas/marketplace-v1.json",
+  "version": "1.0.0",
+  "type": "community",
+  "last_updated": "2026-03-01T00:00:00Z",
+  "disclaimer": "UNAUDITED: Community plugins are automatically scanned but not manually reviewed by DCYFR Security.",
+  "plugins": []
+}
