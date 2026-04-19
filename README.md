@@ -1,5 +1,10 @@
 # DCYFR Community Plugin Marketplace
 
+[![Security Scan](https://github.com/dcyfr/dcyfr-community-plugins/actions/workflows/community-plugin-scan.yml/badge.svg)](https://github.com/dcyfr/dcyfr-community-plugins/actions/workflows/community-plugin-scan.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/dcyfr/dcyfr-community-plugins)
+[![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=flat-square&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/dcyfr)
+
 > **⚠️ UNAUDITED BY DCYFR SECURITY TEAM**
 > Community plugins are automatically scanned but have **not** been manually reviewed
 > by the DCYFR security team. Use at your own risk. For audited plugins, see
@@ -38,6 +43,59 @@ mkdir plugins/your-plugin-name
 ```
 
 Then add: `.claude-plugin/manifest.json`, `trust-score.json`, `sbom.json`, and your code.
+
+### Plugin Structure
+
+Every submission must follow this layout:
+
+```
+plugins/your-plugin-name/
+  .claude-plugin/
+    manifest.json       # plugin metadata (name, version, capabilities, permissions)
+  trust-score.json      # self-declared metrics used as baseline for scoring
+  sbom.json             # Software Bill of Materials (CycloneDX format)
+  index.ts              # plugin entry point (exports default plugin)
+  package.json          # npm metadata, dependencies
+  README.md             # what your plugin does and how to use it
+  LICENSE               # must be SPDX-compatible (MIT recommended)
+```
+
+### `manifest.json` Minimum Fields
+
+```json
+{
+  "name": "your-plugin-name",
+  "version": "1.0.0",
+  "description": "What this plugin does",
+  "author": "your-github-handle",
+  "license": "MIT",
+  "capabilities": ["code_quality"],
+  "permissions": ["read_files"],
+  "dcyfr": {
+    "minVersion": "1.0.0",
+    "maxVersion": "*"
+  }
+}
+```
+
+**Valid capabilities:** `code_quality`, `security`, `testing`, `compliance`, `performance`, `accessibility`, `api_quality`, `ui_quality`, `sbom`, `dependency_analysis`
+
+**Valid permissions:** `read_files`, `read_env`, `network` (network requires trust score ≥ 85)
+
+### Trust Score Breakdown
+
+CIs compute trust scores automatically — your `trust-score.json` is used as a baseline:
+
+| Factor | Weight | Description |
+|--------|--------|-------------|
+| Security scan | 30% | No secrets, vulnerabilities, or malware detected |
+| License | 20% | Valid SPDX identifier, OSI-approved |
+| SBOM completeness | 15% | All deps declared, no phantom deps |
+| Manifest validity | 15% | All required fields present, valid capabilities |
+| Code quality | 10% | No obvious anti-patterns, no `eval`, no `exec` |
+| Author reputation | 10% | GitHub account age, prior contributions |
+
+**Minimum to auto-merge: 70.** Scores below 70 require manual DCYFR review.
 
 ## Verified Publisher Program
 

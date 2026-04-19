@@ -1,0 +1,8 @@
+{
+  "repo_notes": [
+    {
+      "content": "Community-contributed plugins for the DCYFR ecosystem. Document the plugin architecture, contribution guidelines, plugin discovery and installation, API surface for plugin developers, and featured community plugins.",
+      "author": "DCYFR Engineering"
+    }
+  ]
+}
