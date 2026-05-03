@@ -1,6 +1,6 @@
 # DCYFR Community Plugin Marketplace
 
-[![Security Scan](https://github.com/dcyfr/dcyfr-community-plugins/actions/workflows/community-plugin-scan.yml/badge.svg)](https://github.com/dcyfr/dcyfr-community-plugins/actions/workflows/community-plugin-scan.yml)
+[![Security Scan](https://github.com/dcyfr-labs/dcyfr-community-plugins/actions/workflows/community-plugin-scan.yml/badge.svg)](https://github.com/dcyfr-labs/dcyfr-community-plugins/actions/workflows/community-plugin-scan.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/dcyfr/dcyfr-community-plugins)
 [![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=flat-square&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/dcyfr)
@@ -8,7 +8,7 @@
 > **⚠️ UNAUDITED BY DCYFR SECURITY TEAM**
 > Community plugins are automatically scanned but have **not** been manually reviewed
 > by the DCYFR security team. Use at your own risk. For audited plugins, see
-> [dcyfr/dcyfr-plugins](https://github.com/dcyfr/dcyfr-plugins).
+> [dcyfr/dcyfr-plugins](https://github.com/dcyfr-labs/dcyfr-plugins).
 
 Community-contributed plugins for the DCYFR AI framework. All submissions are
 automatically scanned for security issues, but pass/fail is determined by CI — not
@@ -21,7 +21,7 @@ human review.
    trust score calculation).
 3. If **all scans pass** and trust score ≥ 70, the PR is **auto-merged**. No human required.
 4. Plugins with trust score 90+ and 100+ downloads are escalated for DCYFR security audit
-   and may be promoted to [dcyfr-plugins](https://github.com/dcyfr/dcyfr-plugins).
+   and may be promoted to [dcyfr-plugins](https://github.com/dcyfr-labs/dcyfr-plugins).
 
 ## Plugins
 
@@ -37,7 +37,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full instructions.
 
 ```bash
 # Clone and create your plugin directory
-git clone https://github.com/dcyfr/dcyfr-community-plugins
+git clone https://github.com/dcyfr-labs/dcyfr-community-plugins
 cd dcyfr-community-plugins
 mkdir plugins/your-plugin-name
 ```
