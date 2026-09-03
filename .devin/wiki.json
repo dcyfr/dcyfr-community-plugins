@@ -1,8 +1,33 @@
 {
   "repo_notes": [
     {
-      "content": "Community-contributed plugins for the DCYFR ecosystem. Document the plugin architecture, contribution guidelines, plugin discovery and installation, API surface for plugin developers, and featured community plugins.",
-      "author": "DCYFR Engineering"
+      "content": "Ten files and no source code: this is a registry and a set of policies, not a library. A wiki that invents an architecture here is wrong.",
+      "author": "rei-doc-specialist"
+    },
+    {
+      "content": "The submission rules, the automated scan and the unaudited-by-security warning are the content that matters. Carry the warning through to the wiki.",
+      "author": "rei-doc-specialist"
+    }
+  ],
+  "pages": [
+    {
+      "title": "Marketplace Overview",
+      "purpose": "What this registry is, that community plugins are scanned automatically but not manually audited by the DCYFR security team, and how the audited registry differs."
+    },
+    {
+      "title": "Registry Format",
+      "purpose": "The marketplace.json schema: the fields an entry carries and what each one is used for.",
+      "parent": "Marketplace Overview"
+    },
+    {
+      "title": "Submitting a Plugin",
+      "purpose": "The contribution path: requirements, the pull request flow, and what the automated security scan checks before a plugin is listed.",
+      "parent": "Marketplace Overview"
+    },
+    {
+      "title": "Security and Verified Publishers",
+      "purpose": "The security posture, the reporting path, and what verified-publisher status does and does not assert.",
+      "parent": "Marketplace Overview"
     }
   ]
 }
